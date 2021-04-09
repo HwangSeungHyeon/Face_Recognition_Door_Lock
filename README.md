@@ -26,16 +26,16 @@
   * 잠금 해제 - 미구현
 
 ## How to use / 사용 방법
-  * 사용자 등록 (User_register.py and Train.py)
-   > User_resister.py 실행
-   > 사람 이름을 입력받아 폴더 생성
-   > 카메라 기능으로 해당 폴더에 이미지 저장
-   > Train.py 실행
-   > data/people 내부 폴더들의 이미지를 모두 불러옴
-   > mtcnn을 이용해 사진에서 얼굴을 감지하면 해당 얼굴 영역을 모델에 학습
-   > 폴더 이름으로 라벨링
-  * 사용자 인식
-  * 
+  > * 사용자 등록 (User_register.py and Train.py)
+       User_resister.py 실행
+       사람 이름을 입력받아 폴더 생성
+       카메라 기능으로 해당 폴더에 이미지 저장
+       Train.py 실행
+       data/people 내부 폴더들의 이미지를 모두 불러옴
+       mtcnn을 이용해 사진에서 얼굴을 감지하면 해당 얼굴 영역을 모델에 학습
+       폴더 이름으로 라벨링
+    * 사용자 인식
+ 
 
 ## Built With / 개발에 참여한 사람
  * 황승현
