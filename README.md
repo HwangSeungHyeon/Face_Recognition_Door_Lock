@@ -26,7 +26,7 @@
   * 잠금 해제 - 미구현
 
 ## How to use / 사용 방법
-  ## 1. 사용자 등록 with User_register.py and Train.py
+   1. 사용자 등록 with User_register.py and Train.py
        * User_resister.py 실행
        * 사람 이름을 입력받아 폴더 생성
        * 카메라 기능으로 해당 폴더에 이미지 저장
@@ -36,7 +36,7 @@
        * 폴더 이름으로 라벨링
    ![화면 캡처 2021-04-09 212930](https://user-images.githubusercontent.com/57141923/114180070-b49a4100-997a-11eb-8376-3aa197922dea.png)
 
-  ## 2. 사용자 인식 with Video_recognition.py
+   2. 사용자 인식 with Video_recognition.py
   ![face_recognition](https://user-images.githubusercontent.com/57141923/114179575-21610b80-997a-11eb-9ff2-24f09d2bbef3.png)
 
  
