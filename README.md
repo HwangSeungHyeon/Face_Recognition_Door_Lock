@@ -16,10 +16,8 @@
   * sklearn
   
 ## Download / 다운로드 방법
-  * Download with Github desktop
-    * 주소를 깃허브 데스크탑에 붙여넣기 (https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git)
-  * Download project.Zip
-    * 프로젝트를 원하는 폴더에 
+  * Download with Github desktop: 주소를 깃허브 데스크탑에 붙여넣기 (https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git)
+  * Download project.Zip: 프로젝트를 원하는 폴더에 직접 다운로드
 
 ## Function / 기능
   * 사용자 등록
@@ -36,6 +34,7 @@
       * data/people 내부 폴더들의 이미지를 모두 불러옴
       * mtcnn을 이용해 사진에서 얼굴을 감지하면 해당 얼굴 영역을 모델에 학습
       * 폴더 이름으로 라벨링
+      * 
   * 사용자 인식
  
 
