@@ -34,7 +34,8 @@
        * data/people 내부 폴더들의 이미지를 모두 불러옴
        * mtcnn을 이용해 사진에서 얼굴을 감지하면 해당 얼굴 영역을 모델에 학습
        * 폴더 이름으로 라벨링
-      
+   ![화면 캡처 2021-04-09 212930](https://user-images.githubusercontent.com/57141923/114180070-b49a4100-997a-11eb-8376-3aa197922dea.png)
+
   ## 2. 사용자 인식
   ![face_recognition](https://user-images.githubusercontent.com/57141923/114179575-21610b80-997a-11eb-9ff2-24f09d2bbef3.png)
 
