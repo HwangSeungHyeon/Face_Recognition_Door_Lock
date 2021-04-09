@@ -17,15 +17,12 @@
   
 ## Download / 다운로드 방법
   1. Download with Github desktop
-    1.1 깃허브 데스크탑 다운
-    1.2 깃허브 주소를 복사
-    1.3 깃허브 주소와 저장할 경로를 설정하여 다운로드
-  2. Download Zip
-    프로젝트를 
+  2. Download project.Zip
 
 ## Function / 기능
   * 사용자 등록
-  * 잠금 해제
+  * 얼굴 인식 
+  * 잠금 해제 - 미구현
 
 ## How to use / 사용 방법
   * 사용자 등록
