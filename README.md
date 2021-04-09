@@ -26,7 +26,7 @@
   * 잠금 해제 - 미구현
 
 ## How to use / 사용 방법
-  ## * 사용자 등록 (User_register.py and Train.py)
+  ## 1. 사용자 등록 (User_register.py and Train.py)
        * User_resister.py 실행
        * 사람 이름을 입력받아 폴더 생성
        * 카메라 기능으로 해당 폴더에 이미지 저장
@@ -35,7 +35,7 @@
        * mtcnn을 이용해 사진에서 얼굴을 감지하면 해당 얼굴 영역을 모델에 학습
        * 폴더 이름으로 라벨링
       
-  ## * 사용자 인식
+  ## 2. 사용자 인식
   
         ![face_recognition](https://user-images.githubusercontent.com/57141923/114179575-21610b80-997a-11eb-9ff2-24f09d2bbef3.png)
 
