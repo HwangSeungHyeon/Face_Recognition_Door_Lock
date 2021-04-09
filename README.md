@@ -2,7 +2,7 @@
 딥러닝을 기반으로 한 라즈베리파이 얼굴 인식 도어락을 만드는 프로젝트입니다.
 
 
-## Precondition / 사전 조건
+## Package / 필요 패키지
   * Anaconda 4.9.2
   * python 3.7.9
   * tensorflow 2.4.1
