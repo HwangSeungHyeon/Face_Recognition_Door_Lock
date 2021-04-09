@@ -36,6 +36,8 @@
       * 폴더 이름으로 라벨링
       * 
   * 사용자 인식
+     ![face_recognition](https://user-images.githubusercontent.com/57141923/114179575-21610b80-997a-11eb-9ff2-24f09d2bbef3.png)
+
  
 
 ## Built With / 개발에 참여한 사람
