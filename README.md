@@ -20,10 +20,10 @@
   * Download project.Zip
 
 ## Function / 기능
-   * 사용자 등록
-   * 얼굴 탐지
-   * 얼굴 분류
-   * 잠금 해제 - 미구현
+  #### * 사용자 등록
+  #### * 얼굴 탐지
+   #### * 얼굴 분류
+   #### * 잠금 해제 - 미구현
 
 ## How to use / 사용 방법
   * 사용자 등록 (Uset_register.py and Train.py)
