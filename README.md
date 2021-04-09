@@ -14,7 +14,9 @@
   * opencv
   * Matplotlib
   * sklearn
-
+  
+## Download / 다운로드 방법
+  1. Download Github desktop
 
 ## Function / 기능
   * 사용자 등록
