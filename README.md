@@ -16,7 +16,7 @@
   * sklearn
   
 ## Download / 다운로드 방법
-  * Download with Github desktop
+  * Download with Github desktop (https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git)
   * Download project.Zip
 
 ## Function / 기능
