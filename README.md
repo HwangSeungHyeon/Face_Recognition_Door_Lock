@@ -16,20 +16,21 @@
   * sklearn
   
 ## Download / 다운로드 방법
-  1. Download with Github desktop
-  2. Download project.Zip
+  * Download with Github desktop
+  * Download project.Zip
 
 ## Function / 기능
-  * 사용자 등록
-  * 얼굴 인식 
-  * 잠금 해제 - 미구현
+  1. 사용자 이름의 폴더를 생성
+  2. 해당 폴더에 사진 저장
+  3. 저장된 사진으로 학습
+  4. 학습된 모델로 웹캠 얼굴 인식 테스트 
 
 ## How to use / 사용 방법
   * 사용자 등록
   * 잠금 해제
 
 ## Built With / 개발에 참여한 사람
- * 황승현 - CNN 모델 생성, 도어락 연결
+ * 황승현
 
 ## License / 라이센스
 이 프로젝트는 MIT 라이센스로 라이센스가 부여되어 있습니다. 자세한 내용은 LICENSE.md 파일을 참고하세요.
