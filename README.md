@@ -16,7 +16,7 @@
 
 ## Precondition / 사전 조건
   * 학습에 사용할 이미지
-  * 학습 모델 facenet_keras.h5는 https://drive.google.com/drive/folders/1pwQ3H4aJ8a6yyJHZkTwtjcL4wYWQb7bn 에서 다운로드 할 수 있습니다
+  * 학습 모델 facenet_keras.h5는 https://drive.google.com/drive/folders/1pwQ3H4aJ8a6yyJHZkTwtjcL4wYWQb7bn 에서 다운로드
   
 ## Download / 다운로드 방법
   * 주소를 깃허브 데스크탑에 붙여넣기 https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
