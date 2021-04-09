@@ -18,18 +18,13 @@
 ## Download / 다운로드 방법
   1. Download with Github desktop
     1.1 깃허브 데스크탑 다운
-    
-    ![project_down](https://user-images.githubusercontent.com/57141923/114175802-5d45a200-9975-11eb-8040-0a3384929f1b.png)
+     ![project_down](https://user-images.githubusercontent.com/57141923/114175802-5d45a200-9975-11eb-8040-0a3384929f1b.png)
     1.2 깃허브 주소를 복사
-    
-    ![project_down2](https://user-images.githubusercontent.com/57141923/114175805-5e76cf00-9975-11eb-8777-dc9848bf9e2e.png)
-    
-    ![project_down3](https://user-images.githubusercontent.com/57141923/114175420-ffb15580-9974-11eb-8f3b-a9cae615d0ec.png)
+     ![project_down2](https://user-images.githubusercontent.com/57141923/114175805-5e76cf00-9975-11eb-8777-dc9848bf9e2e.png)
+     ![project_down3](https://user-images.githubusercontent.com/57141923/114175420-ffb15580-9974-11eb-8f3b-a9cae615d0ec.png)
     1.3 깃허브 주소와 저장할 경로를 설정하여 다운로드
-    
-    ![project_down4](https://user-images.githubusercontent.com/57141923/114175807-5e76cf00-9975-11eb-95c5-46332d7a8d7b.png)
-    
-    ![project_down5](https://user-images.githubusercontent.com/57141923/114175423-0049ec00-9975-11eb-804d-e7705db1535a.png)
+     ![project_down4](https://user-images.githubusercontent.com/57141923/114175807-5e76cf00-9975-11eb-95c5-46332d7a8d7b.png)
+     ![project_down5](https://user-images.githubusercontent.com/57141923/114175423-0049ec00-9975-11eb-804d-e7705db1535a.png)
   2. Download Zip
 
 ## Function / 기능
