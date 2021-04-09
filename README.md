@@ -3,9 +3,17 @@
 
 
 ## Precondition / 사전 조건
- * Google Colab: 딥러닝 모델 학습에 사용
- * Raspberry pi 4 Model B 8GB: 카메라 및 도어락 제어
- * pi camera: 사용자의 얼굴을 촬영할 카메라
+  * Anaconda 4.9.2
+  * python 3.7.9
+  * tensorflow 2.4.1
+  * keras 2.4.3
+  * cuda 11.0
+  * pickle 
+  * numpy
+  * mtcnn
+  * opencv
+  * Matplotlib
+  * sklearn
 
 
 ## Function / 기능
