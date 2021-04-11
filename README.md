@@ -8,7 +8,7 @@
   * keras 2.4.3
   * cuda 11.0
   * pickle 
-  * numpy
+  * numpy 1.19.2
   * mtcnn
   * opencv 4.5.1
   * Matplotlib
