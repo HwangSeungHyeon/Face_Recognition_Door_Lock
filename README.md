@@ -10,7 +10,7 @@
   * pickle 
   * numpy
   * mtcnn
-  * opencv
+  * opencv 4.5.1
   * Matplotlib
   * sklearn
 
