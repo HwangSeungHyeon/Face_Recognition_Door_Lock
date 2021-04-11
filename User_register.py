@@ -1,29 +1,27 @@
-import cv2, os
+import cv2, random, string
 
-print("사용자 이름을 입력하세요")
-human_name = input()
-
-# 폴더가 없다면 생성
 save_path = "./data/people/"
-img_path = save_path + human_name
-if os.path.isdir(img_path) == False:
-    os.mkdir(img_path)
+
+# 숫자와 문자를 이용한 6자리의 이름 생성
+char_set = string.ascii_lowercase + string.digits
+userId = ''.join(random.sample(char_set*6, 6))
 
 camera = cv2.VideoCapture(0, cv2.CAP_DSHOW) # 카메라로 비디오를 읽어옴
 if not camera.isOpened():
     exit()
-    
-cnt = 0
+
+flag = 0
 while True:
     ret, frame = camera.read()
     if frame is None:
         print('--(!) No captured frame -- Break!')
         break
-    cv2.imwrite(save_path + '/' + human_name + str(cnt) + ".jpg", frame)
-    cnt += 1
-    if cnt < 1:
-        break
 
+    # 사진을 딱 1장만 찍음
+    if flag == 1:
+        cv2.imwrite(save_path + '/' + userId + ".jpg", frame)
+        flag = 0
+        
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
  

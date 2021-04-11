@@ -1,5 +1,4 @@
 import cv2, pickle, numpy as np
-import matplotlib.pyplot as plt
 from sklearn.preprocessing import Normalizer
 
 # get encode
@@ -24,12 +23,6 @@ l2_normalizer = Normalizer('l2')
 def normalize(img):
     mean, std = img.mean(), img.std()
     return (img - mean) / std
-
-# plt 메소드를 이용해 이미지를 보여주기
-def plt_show(cv_img):
-    img_rgb = cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB)
-    plt.imshow(img_rgb)
-    plt.show()
 
 # pickle 파일 가져오기
 def load_pickle(path):

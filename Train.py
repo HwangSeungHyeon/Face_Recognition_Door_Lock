@@ -16,38 +16,37 @@ face_detector = mtcnn.MTCNN()
 face_encoder = load_model(encoder_model)
 
 encoding_dict = dict()
+encodes = []
 
-for person_name in os.listdir(people_dir):
-    person_dir = os.path.join(people_dir, person_name)
-    encodes = []
+# people 폴더 내에 있는 사진들을 불러옴
+for img_name in os.listdir(people_dir):
+    img_path = os.path.join(people_dir, img_name)
 
-    for img_name in os.listdir(person_dir):
-        img_path = os.path.join(person_dir, img_name)
+    # 이미지를 RGB 색상으로 읽음
+    img = cv2.imread(img_path)
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-        # 이미지를 RGB 색상으로 읽음
-        img = cv2.imread(img_path)
-        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # 사진에서 얼굴을 감지 시도
+    results = face_detector.detect_faces(img_rgb)
 
-        # 사진에서 얼굴을 감지 시도
-        results = face_detector.detect_faces(img_rgb)
+    # 사진에서 얼굴을 감지했다면
+    if results:
+        res = max(results, key = lambda b: b['box'][2] * b['box'][3])
+        face, _, _ = get_face(img_rgb, res['box'])
+        face = normalize(face)
+        face = cv2.resize(face, required_size)
 
-        # 사진에서 얼굴을 감지했다면
-        if results:
-            res = max(results, key = lambda b: b['box'][2] * b['box'][3])
-            face, _, _ = get_face(img_rgb, res['box'])
-            face = normalize(face)
-            face = cv2.resize(face, required_size)
-
-            # 해당 얼굴을 모델에 넣어 도출한 결과 값을 encode에 반환
-            encode = face_encoder.predict(np.expand_dims(face, axis=0))[0]
-            encodes.append(encode)
+        # 해당 얼굴을 모델에 넣어 도출한 결과 값을 encodes 리스트에 추가
+        encode = face_encoder.predict(np.expand_dims(face, axis=0))[0]
+        encodes.append(encode)
 
     if encodes:
         encode = np.sum(encodes, axis=0)
         encode = l2_normalizer.transform(np.expand_dims(encode, axis=0))[0]
-        encoding_dict[person_name] = encode
+        encoding_dict[img_name] = encode
 
-# 현재 이름이 등록된 인물 리스트 출력
+
+# 현재 등록된 인물 사진 리스트 출력
 for key in encoding_dict.keys():
     print(key)
 
