@@ -3,6 +3,8 @@ from keras.models import load_model
 from utils import *
 import mtcnn
 
+IP = "http://172.30.1.25:8091/?action=stream"
+
 # 라즈베리 파이의 스트림 영상으로 부터 얼굴 인식을 시도하는 코드
 
 def recognize(img, detector, encoder, encoding_dict, recognition_t=0.4, confidence_t=0.99, required_size=(160, 160), ):
@@ -16,10 +18,12 @@ def recognize(img, detector, encoder, encoding_dict, recognition_t=0.4, confiden
         encode = l2_normalizer.transform(encode.reshape(1, -1))[0]
         name = 'unknown'
 
+        #양의 무한대
         distance = float("inf")
-        for db_name, db_encode in encoding_dict.items():
+        for db_encode in encoding_dict.items():
             dist = cosine(db_encode, encode)
 
+            # 두 이미지 간의 거리가 recognition_t보다 낮을 경우 아는 얼굴로 인식
             # 이미 학습된 얼굴일 경우 name을 unknown에서 변경
             if dist < recognition_t and dist < distance:
                 name = "known"
@@ -40,7 +44,7 @@ face_detector = mtcnn.MTCNN()
 face_encoder = load_model(encoder_model)
 encoding_dict = load_pickle(encodings_path)
 
-cap = cv2.VideoCapture("http://172.30.1.25:8091/?action=stream")
+cap = cv2.VideoCapture(IP)
 while cap.isOpened():
     ret, frame = cap.read()
     if not ret:

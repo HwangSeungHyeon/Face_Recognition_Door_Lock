@@ -1,11 +1,11 @@
 import cv2
-from utils import Rotate
+
+# 스트림이 제대로 열리는지 확인하는 코드
 
 cap = cv2.VideoCapture("http://172.30.1.25:8091/?action=stream")
 
 while(cap.isOpened()):
     ret, frame = cap.read()
-    Rotate(frame, 90)
     cv2.imshow('frame', frame)
 
     key = cv2.waitKey(1) & 0xFF

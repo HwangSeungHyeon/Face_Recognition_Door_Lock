@@ -24,15 +24,17 @@ for img_name in os.listdir(people_dir):
 
     # 이미지를 RGB 색상으로 읽음
     img = cv2.imread(img_path)
-    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     # 사진에서 얼굴을 감지 시도
-    results = face_detector.detect_faces(img_rgb)
+    results = face_detector.detect_faces(img)
+    # results = face_detector.detect_faces(img_rgb)
 
     # 사진에서 얼굴을 감지했다면
     if results:
         res = max(results, key = lambda b: b['box'][2] * b['box'][3])
-        face, _, _ = get_face(img_rgb, res['box'])
+        # face, _, _ = get_face(img_rgb, res['box'])
+        face, _, _ = get_face(img, res['box'])
         face = normalize(face)
         face = cv2.resize(face, required_size)
 
