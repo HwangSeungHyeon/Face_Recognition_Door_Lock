@@ -42,7 +42,8 @@
   ## 2. 사용자 인식 with Video_recognition.py
   ![face_recognition](https://user-images.githubusercontent.com/57141923/114179575-21610b80-997a-11eb-9ff2-24f09d2bbef3.png)
 
- 
+ ## 3. 도어락 제어
+    도어락 제어 영상: https://youtu.be/o0acUs2lJXM
 
 ## Built With / 개발에 참여한 사람
  * 황승현
