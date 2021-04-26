@@ -1,9 +1,15 @@
+# 유저의 사진을 찍는 코드입니다. 원하는 폴더의 이름을 입력하여 얼굴 사진을 저장하세요
+
 from imutils.video import VideoStream
 import time, os
 import cv2
 
 cascade = "haarcascade_frontalface_default.xml"
 detector = cv2.CascadeClassifier(cascade)
+folder_dir = "dataset/Known/"
+
+if os.path.isdir(folder_dir)==False:
+    os.mkdir(folder_dir)
 
 def face_detect(img):
     #흑백처리 
@@ -23,7 +29,7 @@ def face_detect(img):
 print("유저 이름: ")
 people_name = input()
 
-save_path = "known_people/" + people_name +"/"
+save_path = folder_dir + people_name +"/"
 print("저장할 폴더의 경로는 " + save_path + " 입니다.")
 
 if os.path.isdir(save_path)==False:
@@ -37,9 +43,6 @@ cnt = 0
 while True:
     frame = vs.read()
     cv2.imshow("Frame", frame)
-
-    if cnt is 0:
-        print("얼굴 사진을 찍습니다.")
 
     # 얼굴이 존재할 경우 5장의 사진을 저장
     if face_detect(frame) is not False and cnt < 5:

@@ -1,17 +1,19 @@
+# 01_Make_IMG.py 파일로 만든 얼굴 사진을 인코딩하는 단계입니다.
+
 from imutils import paths
 import face_recognition
 import pickle, os, cv2
 
 # 이미지 경로에 한국어가 있으면 안 됩니다.
 # 데이터 셋과 pickle 데이터를 저장할 경로 설정
-datasets = "dataset"
-encodings_path = "encoding/encodings.pkl"
+datasets = "dataset/known"
+encodings_path = "encoding/Known_Face.pkl"
 
 # 얼굴 탐지에는 hog 방식과 cnn 방식이 존재
 # hog는 빠르지만 인식률이 떨어지고, cnn은 느리지만 인식률이 높음
 model_name = "hog"
 
-# datasets에 들어있는 폴더 출력
+# datasets에 들어있는 이미지 출력
 imagePaths = list(paths.list_images(datasets))
 
 # 얼굴 embedding vector 데이터를 저장할 knownEncodings 리스트와, 학습한 얼굴 이름을 저장할 knownNames 리스트
