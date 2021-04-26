@@ -3,6 +3,7 @@
 from imutils.video import VideoStream
 import time, os
 import cv2
+import face_recognition
 
 cascade = "haarcascade_frontalface_default.xml"
 detector = cv2.CascadeClassifier(cascade)

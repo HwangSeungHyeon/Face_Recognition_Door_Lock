@@ -9,14 +9,17 @@ def unlock(pin = 18):
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(pin,GPIO.OUT)
     GPIO.output(pin, GPIO.HIGH)
+    time.sleep(1)
+    GPIO.cleanup(pin)
+    time.sleep(1)
     
 def lock(pin = 18):
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(pin,GPIO.OUT)
     GPIO.output(pin, GPIO.LOW)
+    time.sleep(1)
+    GPIO.cleanup(pin)
+    time.sleep(1)
     
 if __name__ == '__main__':
     unlock()
-    time.sleep(2)
-    lock()
-    GPIO.cleanup(18)

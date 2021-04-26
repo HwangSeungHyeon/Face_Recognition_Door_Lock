@@ -7,6 +7,7 @@ import pickle, os, cv2
 # 이미지 경로에 한국어가 있으면 안 됩니다.
 # 데이터 셋과 pickle 데이터를 저장할 경로 설정
 datasets = "dataset/known"
+# encodings_path = "encoding/Known_Face.pkl"
 encodings_path = "encoding/Known_Face.pkl"
 
 # 얼굴 탐지에는 hog 방식과 cnn 방식이 존재
@@ -20,7 +21,7 @@ imagePaths = list(paths.list_images(datasets))
 knownEncodings = []
 knownNames = []
 
-# 이미지 경로를 돌면서 얼굴을 학습
+# 이미지 경로를 돌면서 얼굴의 embedding vector를 생성
 for (i, imagePath) in enumerate(imagePaths):
 	print("[INFO] processing image {}/{}".format(i + 1, len(imagePaths)))
 	name = imagePath.split(os.path.sep)[-2]
@@ -36,7 +37,7 @@ for (i, imagePath) in enumerate(imagePaths):
 		knownEncodings.append(encoding)
 		knownNames.append(name)
 
-# 이름과 embedding vector 데이터를 설정한 경로에 pickle 파일로 저장
+# 이름과 embedding vector 데이터를, 설정한 경로에 pickle 파일로 저장
 print("[INFO] serializing encodings...")
 data = {"encodings": knownEncodings, "names": knownNames}
 

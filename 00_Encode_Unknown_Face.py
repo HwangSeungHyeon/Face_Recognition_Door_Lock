@@ -21,11 +21,11 @@ model_name = "hog"
 # datasets에 들어있는 폴더 출력
 imagePaths = list(paths.list_images(datasets))
 
-# 얼굴 embedding vector 데이터를 저장할 knownEncodings 리스트와, 학습한 얼굴 이름을 저장할 knownNames 리스트
+# 얼굴 embedding vector 데이터를 저장할 UnknownEncodings 리스트와, 이름을 저장할 UnknownNames 리스트
 UnknownEncodings = []
 UnknownNames = []
 
-# 이미지 경로를 돌면서 얼굴을 학습
+# 이미지 경로를 돌면서 얼굴의 embedding vector를 생성
 for (i, imagePath) in enumerate(imagePaths):
     print("[INFO] processing image {}/{}".format(i + 1, len(imagePaths)))
     name = "Unknown"
@@ -41,7 +41,7 @@ for (i, imagePath) in enumerate(imagePaths):
         UnknownEncodings.append(encoding)
         UnknownNames.append(name)
 
-# 이름과 embedding vector 데이터를 설정한 경로에 pickle 파일로 저장
+# 이름과 embedding vector 데이터를, 설정한 경로에 pickle 파일로 저장
 print("[INFO] serializing encodings...")
 data = {"encodings": UnknownEncodings, "names": UnknownNames}
 
