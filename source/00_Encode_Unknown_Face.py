@@ -1,5 +1,4 @@
 # 02_Encode_Face.py와 유사한 코드입니다. 이걸로 먼저 Unknown 피클을 생성해주세요
-
 from imutils import paths
 import face_recognition
 import pickle, os, cv2
@@ -46,6 +45,6 @@ print("[INFO] serializing encodings...")
 data = {"encodings": UnknownEncodings, "names": UnknownNames}
 
 # 피클 파일 그냥 새로 만들기
-f = open(encodings_path, "wb")
-f.write(pickle.dumps(data))
+with open(encodings_path, "wb") as f:
+    f.write(pickle.dumps(data))
 f.close()
