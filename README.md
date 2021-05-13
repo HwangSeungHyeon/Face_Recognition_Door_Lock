@@ -62,7 +62,8 @@
        
   ## 1. 쉘 스크립트 작동
       1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경 실행
-      2. sh run_script.sh으로 파이썬 코드 실행
+      2. cd Face_Recognition_Door_Lock
+      3. sh run_script.sh으로 파이썬 코드 실행
        
   ## 2. 사용자 등록 https://youtu.be/Ubvjq_VEEco
       2-1. Function.py 실행 후 a를 입력한다.
@@ -99,7 +100,7 @@
       5-2. a와 b 중 b를 입력한다.
       5-3. Unknown_Face.pkl을 제외한 모든 사람의 데이터가 삭제된다.
 
-## 쉘 스크립트 작성법
+## 원하는 위치에 쉘 스크립트를 작성하는 법
      1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경 실행
      2. nano run_script.sh을 입력해서 원하는 곳에 nano 편집기를 열어 run_script.sh라는 이름의 파일을 생성
      3. #!/bin/bash 입력
