@@ -40,7 +40,7 @@
 ## 사전 준비
   * 라즈베리 파이 OS 설치: https://blog.naver.com/ljy9378/221430062420
   * 라즈베리 파이 기본 설정: https://blog.naver.com/ljy9378/221430169621
-  * 가상환경 사용법: https://sites.google.com/site/raspberrypieducation/programmingtools/python/pyvenv
+  * 가상환경 사용법: https://www.daleseo.com/python-venv/
   * opencv 설치 방법: https://webnautes.tistory.com/916
   * Unknown Face 이미지 출처: https://github.com/JingchunCheng/All-Age-Faces-Dataset/blob/master/README.md
   * GPIO 설치 방법: https://hoho325.tistory.com/212
