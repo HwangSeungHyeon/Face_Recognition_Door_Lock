@@ -48,7 +48,9 @@
 ## How to use / 사용 방법
   ## 0. Unknown Face 등록
        1-1 이 단계는 굳이 하지 않아도 되며, encoding 폴더에 이미 pkl 파일이 들어있음
-       1-2 
+       1-2 테스트 해보고 싶다면 source 폴더에 있는 00_Encode_Unknown_Face.py를 Face_Recognition_Door_Lock 폴더로 옮김
+       1-3 코드를 실행하면 Unknown_Face.pkl 파일이 encoding 폴더에 생성됨
+       
   ## 1. 사용자 등록 
        1-1. Function.py 실행 후 a를 입력
        1-2. 사람 이름을 입력, 해당 이름을 가진 폴더가 생성
@@ -64,8 +66,11 @@
 
   ## 2. 얼굴 인식을 이용한 도어락 제어
        1-1. Function.py 실행 후 b를 입력
-       1-2. 사용자 등록 단계에서 만든 pkl 파일을 모두 병합
-       1-3.
+       1-2. encoding 폴더에 있는 pkl 파일을 모두 병합
+       1-3. 라즈베리 파이 카메라 모듈로 비디오를 촬영
+       1-4. 비디오에서 얼굴을 검출 후, pkl 파일의 데이터와 비교
+       1-4a. 등록된 얼굴일 경우 릴레이모듈에 제어 신호를 보내 도어락의 잠금이 해제됨
+       1-4b. Unknown일 경우 계속 비디오를 촬영
   ![face_recognition](https://user-images.githubusercontent.com/57141923/114179575-21610b80-997a-11eb-9ff2-24f09d2bbef3.png)
 
  ## 3. 도어락 제어
