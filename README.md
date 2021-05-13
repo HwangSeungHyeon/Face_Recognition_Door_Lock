@@ -1,7 +1,6 @@
 # Face_Recognition_Door_Lock
 딥러닝을 기반으로 한 라즈베리파이 얼굴 인식 도어락을 만드는 프로젝트입니다.
 
-
 ## Development environment / 개발 환경
   * Raspberry pi 4 8gb / 라즈베리 파이 4 8gb
   * Raspberry Pi Touch Display / 라즈베리 파이 공식 7인치 터치 스크린
@@ -17,7 +16,7 @@
   * opencv 4.5.1 
   * imutils 0.5.4
   * pandas 1.2.4
-  * face_recognition https://github.com/ageitgey/face_recognition/blob/master/README_Korean.md
+  * face_recognition
   * picamera
   * time
   * os
@@ -26,8 +25,14 @@
   * pickle
 
 ## Precondition / 사전 조건
-  * Unknown Face 이미지 출처: All-Age-Faces-Dataset https://github.com/JingchunCheng/All-Age-Faces-Dataset/blob/master/README.md
+  * 라즈베리 파이 OS 설치: https://blog.naver.com/ljy9378/221430062420
+  * 라즈베리 파이 기본 설정: https://blog.naver.com/ljy9378/221430169621
+  * 가상환경 사용법: https://sites.google.com/site/raspberrypieducation/programmingtools/python/pyvenv
+  * opencv 설치 방법: https://webnautes.tistory.com/916
+  * Unknown Face 이미지 출처: https://github.com/JingchunCheng/All-Age-Faces-Dataset/blob/master/README.md
   * 
+  * Face recognition 설치 방법:
+  
   
 ## Download / 다운로드 방법
   * 주소를 깃허브 데스크탑에 붙여넣기 https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
