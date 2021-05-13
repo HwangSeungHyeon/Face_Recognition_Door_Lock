@@ -35,9 +35,9 @@
   * Face recognition 설치 방법: 콘솔창에 pip3 install face_recognition 입력
   
 ## Download / 다운로드 방법
-  ### 1. open the terminal
-  ### 2. cd ~/원하는 위치
-  ### 3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
+  1. open the terminal
+  2. cd ~/원하는 위치
+  3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
 
 ## Function / 기능
   * 사용자 사진 촬영 및 등록
