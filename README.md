@@ -25,32 +25,32 @@
   * pickle
 
 ## Precondition / 사전 조건
-  * How to install Raspberry pi os / 라즈베리 파이 OS 설치: https://blog.naver.com/ljy9378/221430062420
-  * Raspberry pi setting / 라즈베리 파이 기본 설정: https://blog.naver.com/ljy9378/221430169621
-  * How to use virtual environment / 가상환경 사용법: https://sites.google.com/site/raspberrypieducation/programmingtools/python/pyvenv
-  * How to install opencv / opencv 설치 방법: https://webnautes.tistory.com/916
-  * Unknown Face  / 모르는 얼굴 이미지 출처: https://github.com/JingchunCheng/All-Age-Faces-Dataset/blob/master/README.md
-  * How to install GPIO / GPIO 설치 방법: https://hoho325.tistory.com/212
-  * How to install picamera / 카메라 설정 및 picamera 라이브러리 설치: http://www.dreamy.pe.kr/zbxe/CodeClip/3769343
-  * How to install face recognition / Face recognition 설치 방법: 콘솔창에 pip3 install face_recognition 입력
+  * 라즈베리 파이 OS 설치: https://blog.naver.com/ljy9378/221430062420
+  * 라즈베리 파이 기본 설정: https://blog.naver.com/ljy9378/221430169621
+  * 가상환경 사용법: https://sites.google.com/site/raspberrypieducation/programmingtools/python/pyvenv
+  * opencv 설치 방법: https://webnautes.tistory.com/916
+  * Unknown Face 이미지 출처: https://github.com/JingchunCheng/All-Age-Faces-Dataset/blob/master/README.md
+  * GPIO 설치 방법: https://hoho325.tistory.com/212
+  * 카메라 설정 및 picamera 라이브러리 설치: http://www.dreamy.pe.kr/zbxe/CodeClip/3769343
+  * Face recognition 설치 방법: 콘솔창에 pip3 install face_recognition 입력
   
 ## Download / 다운로드 방법
-  1. open the terminal
-  2. cd ~/원하는 위치
-  3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
+  ###1. open the terminal
+  ###2. cd ~/원하는 위치
+  ###3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
 
 ## Function / 기능
   * 사용자 사진 촬영 및 등록
   * 얼굴 인식을 이용한 잠금 해제
-  * 특정 사용자 삭제
-  * 모든 사용자 
+  * 특정 사용자 얼굴 삭제
+  * 모든 사용자 얼굴 삭제
 
 ## How to use / 사용 방법
-  ## 1. 사용자 등록 with User_register.py and Train.py
-       * User_resister.py 실행
-       * 사람 이름을 입력받아 폴더 생성
-       * 카메라 기능으로 해당 폴더에 이미지 저장
-       * Train.py 실행
+  ## 1. User registeration / 사용자 등록
+       1-1. Function.py 실행
+       1-2. 사람 이름을 입력받으면 해당 이름을 가진 폴더가 생성
+       1-3. 
+       1-4. 0.5초의 간격으로 10장의 사진을 촬영
        * data/people 내부 폴더들의 이미지를 모두 불러옴
        * mtcnn을 이용해 사진에서 얼굴을 감지하면 해당 얼굴 영역을 모델에 학습
        * 폴더 이름으로 라벨링
