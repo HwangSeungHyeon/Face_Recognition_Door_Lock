@@ -14,6 +14,7 @@ import face_recognition
 import RPi.GPIO as GPIO
 from shutil import rmtree
 
+# unlock과 lock을 테스트할 때 사용하는 메소드
 def test():
     unlock()
     lock()
@@ -122,7 +123,8 @@ def register():
             for encoding in encodings:
                 knownEncodings.append(encoding)
                 knownNames.append(name)
-                
+        
+        # 모든 사진에 얼굴이 없다면
         if not knownEncodings:
             print("[Error] Can't detect faces in all images")
             
