@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from imutils.video import VideoStream
 from picamera import PiCamera, Color
 from imutils import paths
@@ -23,7 +25,7 @@ def unlock(pin = 18):
     GPIO.output(pin, GPIO.HIGH)
     time.sleep(0.1)
     GPIO.cleanup(pin)
-    time.sleep(4)
+    time.sleep(5)
     
 # 잠그는 메소드
 def lock(pin = 18):
@@ -52,7 +54,7 @@ def Rotate(src, degrees):
 
 # 사진을 찍은 후 인코딩하는 메소드
 def register():
-    folder_dir = "dataset/Known/"
+    folder_dir = "/home/pi/Face_Recognition_Door_Lock/dataset/Known/"
     # 해당하는 폴더가 없을 경우 생성해줌
     if os.path.isdir(folder_dir)==False:
         os.mkdir(folder_dir)
@@ -89,7 +91,7 @@ def register():
         time.sleep(2)
         camera.stop_preview()
 
-        encodings_path = "encoding/"
+        encodings_path = "/home/pi/Face_Recognition_Door_Lock/encoding/"
         
         #datasets에 들어있는 이미지 list
         imagePaths = list(paths.list_images(save_path))
@@ -110,7 +112,7 @@ def register():
             boxes = face_recognition.face_locations(rgb, model = "hog")
             
             if not boxes:
-                print("[Info] Face does not detected")
+                print("[ERROR] Face does not detected")
                 pass
     
             # 박스 영역의 얼굴 임베딩 데이터를 추출
@@ -132,11 +134,14 @@ def register():
             with open(encodings_path + people_name + ".pkl", "wb") as f:
                 f.write(pickle.dumps(data))
             f.close()
+            
+            print("[Info] Delete images used for encoding")
+            rmtree(save_path)
 
 # 얼굴을 인식하는 메소드
 def recognition():
     # pkl 데이터들을 합치는 부분
-    base_dir = 'encoding/'
+    base_dir = '/home/pi/Face_Recognition_Door_Lock/encoding/'
     temp_encode = []
     temp_name = []
     
@@ -201,8 +206,9 @@ def recognition():
 
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
-        #if flag == 1: Doorlock_Control.test()
-        if flag == 1: pass
+        if flag == 1: unlock()
+        #if flag == 1: test()
+        #if flag == 1: pass
         
         if key == ord("q"):
             break
@@ -212,42 +218,21 @@ def recognition():
     
 # 유저 정보를 삭제하는 메소드
 def withdraw():
-    folder_dir = "dataset/Known/"
-    # Known 폴더가 없을 경우 종료
-    if os.path.isdir(folder_dir)==False:
-        print("[Error] Known folder is not exist")
-        exit()
-        
-    pickle_dir = "encoding/"
+    pickle_dir = "/home/pi/Face_Recognition_Door_Lock/encoding/"
     # encoding 폴더가 없을 경우 종료
     if os.path.isdir(pickle_dir)==False:
         print("[Error] encoding folder is not exist")
         exit()
     
     while True:
-        print("a. 사진 삭제, b. 피클파일 삭제, c. all, q. return")
+        print("a. 특정 사용자 삭제, b. 모든 사용자 삭제, q. return")
         select = input("입력: ")
         
         if select == 'q':
-            #print("[Info] Program exit")
-            #quit()
             print("[Info] Return menu")
             break
-    
+            
         elif select == 'a':
-            delete_name = input("삭제할 이름 입력: ")
-            delete_path = folder_dir + delete_name +"/"
-            
-            # 폴더가 없을 경우
-            if os.path.isdir(delete_path) == False:
-                print("[Error] folder is not exist")
-                continue
-            
-            print("삭제할 폴더의 경로는 " + delete_path + " 입니다.")
-            rmtree(delete_path)
-            print("[Info] " + delete_name + " is deleted")
-            
-        elif select == 'b':
             name = input("삭제할 이름 입력: ")
             if name == 'Unknown_Face':
                 print("[Error] Can not deleted!")
@@ -264,8 +249,12 @@ def withdraw():
             os.remove(delete_path)
             print("[Info] " + delete_name + " is deleted")
             
-        elif select == 'c':
-            print("test")
+        elif select == 'b':
+            for file in os.listdir(pickle_dir):
+                if file.endswith(".pkl"):
+                    if file == 'Unknown_Face.pkl': continue
+                    os.remove(os.path.join(pickle_dir, file))
+            print("[Info] Deleted all users")
 
 if __name__ == '__main__':
     while True:
@@ -281,3 +270,4 @@ if __name__ == '__main__':
             exit()
         else:
             pass
+        
