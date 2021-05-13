@@ -1,45 +1,65 @@
 # Face_Recognition_Door_Lock
 딥러닝을 기반으로 한 라즈베리파이 얼굴 인식 도어락을 만드는 프로젝트입니다.
 
-## Package / 필요 패키지
-  * Anaconda 4.9.2
-  * python 3.7.9
-  * tensorflow 2.4.1
-  * keras 2.4.3
-  * cuda 11.0
-  * pickle 
-  * numpy 1.19.2
-  * mtcnn
-  * opencv 4.5.1
-  * Matplotlib
-  * sklearn
+## 개발 환경
+  * Raspberry pi 4 8gb / 라즈베리 파이 4 8gb
+  * Raspberry Pi Touch Display / 라즈베리 파이 공식 7인치 터치 스크린
+  * Raspberry pi 8MP Camera module v2 / 라즈베리파이 적외선 카메라 모듈 v2, 8MP
+  * 5V 1-Chanel relay module POO109 / 1채널 5v 릴레이모듈 P00109
+  * Mille Digital Doorlock MI-2300 / DC 밀레 디지털 도어락 MI-2300
+  * Raspberry pi OS 32bit / 라즈베리파이 OS(구 라즈비안) 32비트
+  * Thonny editor / 라즈비안 내장 토니 에디터
 
-## Precondition / 사전 조건
-  * 학습에 사용할 이미지: 
-  * facenet_keras.h5 다운로드: https://drive.google.com/drive/folders/1pwQ3H4aJ8a6yyJHZkTwtjcL4wYWQb7bn
+## 필요 라이브러리
+  * python 3.7.3
+  * numpy 1.20.2
+  * opencv 4.5.1 
+  * imutils 0.5.4
+  * pandas 1.2.4
+  * face_recognition
+  * picamera
+  * time
+  * os
+  * GPIO
+  * shutil
+  * pickle
+
+## 사전 조건
+  * 라즈베리 파이 OS 설치: https://blog.naver.com/ljy9378/221430062420
+  * 라즈베리 파이 기본 설정: https://blog.naver.com/ljy9378/221430169621
+  * 가상환경 사용법: https://sites.google.com/site/raspberrypieducation/programmingtools/python/pyvenv
+  * opencv 설치 방법: https://webnautes.tistory.com/916
+  * Unknown Face 이미지 출처: https://github.com/JingchunCheng/All-Age-Faces-Dataset/blob/master/README.md
+  * GPIO 설치 방법: https://hoho325.tistory.com/212
+  * 카메라 설정 및 picamera 라이브러리 설치: http://www.dreamy.pe.kr/zbxe/CodeClip/3769343
+  * Face recognition 설치 방법: 콘솔창에 pip3 install face_recognition 입력
   
-## Download / 다운로드 방법
-  * 주소를 깃허브 데스크탑에 붙여넣기 https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
-  * 또는 프로젝트를 원하는 폴더에 직접 다운로드
+## 라즈베리 파이에 다운로드하는 방법
+  1. open the terminal
+  2. cd ~/원하는 위치
+  3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
 
 ## Function / 기능
-  * 사용자 등록
-  * 얼굴 탐지
-  * 얼굴 분류
-  * 잠금 해제 - 미구현
+  * 사용자 사진 촬영 및 등록
+  * 얼굴 인식을 이용한 잠금 해제
+  * 특정 사용자 얼굴 삭제
+  * 모든 사용자 얼굴 삭제
 
 ## How to use / 사용 방법
-  ## 1. 사용자 등록 with User_register.py and Train.py
-       * User_resister.py 실행
-       * 사람 이름을 입력받아 폴더 생성
-       * 카메라 기능으로 해당 폴더에 이미지 저장
-       * Train.py 실행
-       * data/people 내부 폴더들의 이미지를 모두 불러옴
-       * mtcnn을 이용해 사진에서 얼굴을 감지하면 해당 얼굴 영역을 모델에 학습
-       * 폴더 이름으로 라벨링
-   ![화면 캡처 2021-04-09 212930](https://user-images.githubusercontent.com/57141923/114180070-b49a4100-997a-11eb-8376-3aa197922dea.png)
+  ## 1. 사용자 등록
+       1-1. Function.py 실행
+       1-2. 사람 이름을 입력받으면 해당 이름을 가진 폴더가 생성
+       1-3. 라즈베리 파이 카메라 모듈 v2로 사진을 촬영하기 전 5초의 유예 기간이 주어짐
+       1-4. 0.5초의 간격으로 10장의 사진을 촬영
+       1-5. 생성한 폴더에 사진을 저장
+       1-6. 촬영한 사진에서 얼굴 영역 검출
+       1-7a. 검출한 영역에 얼굴이 있을 경우 특징점 벡터를 추출
+       1-7b. 검출한 영역에 얼굴이 없을 경우 PASS
+       1-8a. 얼굴이 하나라도 존재할 경우 생성한 데이터로 "사용자 이름".pkl을 생성
+       1-8b. 모든 사진에서 얼굴이 검출되지 않았을 경우 pkl 파일을 만들지 않고 종료
+   ![seung_hyeon0](https://user-images.githubusercontent.com/57141923/118157873-0b050e80-b456-11eb-965f-315b911da261.jpg)
 
-  ## 2. 사용자 인식 with Video_recognition.py
+  ## 2. 사용자 인식
   ![face_recognition](https://user-images.githubusercontent.com/57141923/114179575-21610b80-997a-11eb-9ff2-24f09d2bbef3.png)
 
  ## 3. 도어락 제어
