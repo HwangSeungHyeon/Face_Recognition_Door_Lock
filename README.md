@@ -51,7 +51,7 @@
        1-2 테스트 해보고 싶다면 source 폴더에 있는 00_Encode_Unknown_Face.py를 Face_Recognition_Door_Lock 폴더로 옮김
        1-3 코드를 실행하면 Unknown_Face.pkl 파일이 encoding 폴더에 생성됨
        
-  ## 1. 사용자 등록 
+  ## 1. 사용자 등록 https://youtu.be/Ubvjq_VEEco
       1-1. Function.py 실행 후 a를 입력
       1-2. 사람 이름을 입력, 해당 이름을 가진 폴더가 생성
       1-3. 라즈베리 파이 카메라 모듈 v2로 사진을 촬영하기 전 5초의 유예 기간이 주어짐
@@ -74,7 +74,7 @@
   ![image](https://user-images.githubusercontent.com/57141923/118159755-66d09700-b458-11eb-8d1f-3439a15775bc.png)
 
 
- ## 3. 특정 사용자 얼굴 삭제
+ ## 3. 특정 사용자 얼굴 삭제 
       1-1. Function.py 실행 후 c를 입력
       1-2. a와 b 중 a를 입력
       1-3
