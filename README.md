@@ -69,12 +69,16 @@
        1-2. encoding 폴더에 있는 pkl 파일을 모두 병합
        1-3. 라즈베리 파이 카메라 모듈로 비디오를 촬영
        1-4. 비디오에서 얼굴을 검출 후, pkl 파일의 데이터와 비교
-       1-4a. 등록된 얼굴일 경우 릴레이모듈에 제어 신호를 보내 도어락의 잠금이 해제됨
+       1-4a. 등록된 얼굴일 경우 릴레이모듈에 제어 신호를 보내 도어락의 잠금이 해제되며, 다음 얼굴을 입력받지 못하게 5초의 딜레이를 줌
        1-4b. Unknown일 경우 계속 비디오를 촬영
-  ![face_recognition](https://user-images.githubusercontent.com/57141923/114179575-21610b80-997a-11eb-9ff2-24f09d2bbef3.png)
+  ![image](https://user-images.githubusercontent.com/57141923/118159755-66d09700-b458-11eb-8d1f-3439a15775bc.png)
 
- ## 3. 도어락 제어
-    도어락 제어 영상: https://youtu.be/o0acUs2lJXM
+
+ ## 3. 특정 사용자 얼굴 삭제
+    
+    
+ ## 4. 모든 사용자 얼굴 삭제
+    
 
 ## Built With / 개발에 참여한 사람
  * 황승현
