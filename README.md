@@ -2,13 +2,13 @@
 딥러닝을 기반으로 한 라즈베리파이 얼굴 인식 도어락을 만드는 프로젝트입니다.
 
 ## 개발 환경
-  * Raspberry pi 4 8gb / 라즈베리 파이 4 8gb
-  * Raspberry Pi Touch Display / 라즈베리 파이 공식 7인치 터치 스크린
-  * Raspberry pi 8MP Camera module v2 / 라즈베리파이 적외선 카메라 모듈 v2, 8MP
-  * 5V 1-Chanel relay module POO109 / 1채널 5v 릴레이모듈 P00109
-  * Mille Digital Doorlock MI-2300 / DC 밀레 디지털 도어락 MI-2300
-  * Raspberry pi OS 32bit / 라즈베리파이 OS(구 라즈비안) 32비트
-  * Thonny editor / 라즈비안 내장 토니 에디터
+  * 라즈베리 파이 4 8gb
+  * 라즈베리 파이 공식 7인치 터치 스크린
+  * 라즈베리파이 적외선 카메라 모듈 v2, 8MP
+  * 1채널 5v 릴레이모듈 P00109
+  * DC 밀레 디지털 도어락 MI-2300
+  * 라즈베리파이 OS(구 라즈비안) 32비트
+  * Thonny 에디터
 
 ## 필요 라이브러리
   * python 3.7.3
@@ -39,13 +39,13 @@
   2. cd ~/원하는 위치
   3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
 
-## Function / 기능
+## 프로그램 기능
   * 사용자 사진 촬영 및 등록
   * 얼굴 인식을 이용한 잠금 해제
   * 특정 사용자 얼굴 삭제
   * 모든 사용자 얼굴 삭제
 
-## How to use / 사용 방법
+## 사용 방법
   ## 0. Unknown Face 등록
        1-1 이 단계는 굳이 하지 않아도 되며, encoding 폴더에 이미 pkl 파일이 들어있음
        1-2 테스트 해보고 싶다면 source 폴더에 있는 00_Encode_Unknown_Face.py를 Face_Recognition_Door_Lock 폴더로 옮김
