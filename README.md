@@ -96,7 +96,7 @@
       4-3. Unknown_Face.pkl을 제외한 모든 사람의 데이터가 삭제된다.
 
 ## 쉘 스크립트 작성법
-    1. source 가상환경폴더명/bin/activate
+    1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경 실행
     2. nano run_script.sh을 입력해서 원하는 곳에 nano 편집기를 열어 run_script.sh라는 이름의 파일을 생성
     3. #!/bin/bash 입력
     4. echo "run script" 입력
