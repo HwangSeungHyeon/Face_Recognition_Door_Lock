@@ -50,7 +50,7 @@
   * 쉘 스크립트 작성법: https://ddangeun.tistory.com/113
   
 ## 라즈베리 파이에 다운로드하는 방법
-  1. open the terminal
+  1. 라즈베리 파이 상단 메뉴의 터미널 아이콘 클릭
   2. cd ~/원하는 위치
   3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
 
