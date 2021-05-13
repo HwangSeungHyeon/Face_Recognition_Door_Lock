@@ -74,13 +74,17 @@
   ![image](https://user-images.githubusercontent.com/57141923/118159755-66d09700-b458-11eb-8d1f-3439a15775bc.png)
 
 
- ## 3. 특정 사용자 얼굴 삭제 
+ ## 3. 특정 사용자 얼굴 삭제 https://youtu.be/sfnRyiziK5E
       1-1. Function.py 실행 후 c를 입력
       1-2. a와 b 중 a를 입력
-      1-3
+      1-3. 삭제할 사람의 이름을 입력
+      1-4. 해당 이름의 pkl 파일을 삭제
+      1-4a. Unknown_Face.pkl 파일은 삭제하지 못함
     
- ## 4. 모든 사용자 얼굴 삭제
-    
+ ## 4. 모든 사용자 얼굴 삭제 https://youtu.be/oqvoWAOGPkM
+      1-1. Function.py 실행 후 c를 입력
+      1-2. a와 b 중 b를 입력
+      1-3. Unknown_Face.pkl을 제외한 모든 사람의 데이터가 삭제
 
 ## Built With / 개발에 참여한 사람
  * 황승현
