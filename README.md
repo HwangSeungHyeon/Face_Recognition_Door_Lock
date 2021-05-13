@@ -2,31 +2,25 @@
 딥러닝을 기반으로 한 라즈베리파이 얼굴 인식 도어락을 만드는 프로젝트입니다.
 
 ## Package / 필요 패키지
-  * Anaconda 4.9.2
   * python 3.7.9
-  * tensorflow 2.4.1
-  * keras 2.4.3
-  * cuda 11.0
   * pickle 
   * numpy 1.19.2
-  * mtcnn
   * opencv 4.5.1
-  * Matplotlib
-  * sklearn
+  * face_recognition https://github.com/ageitgey/face_recognition/blob/master/README_Korean.md
 
 ## Precondition / 사전 조건
   * 학습에 사용할 이미지: 
-  * facenet_keras.h5 다운로드: https://drive.google.com/drive/folders/1pwQ3H4aJ8a6yyJHZkTwtjcL4wYWQb7bn
+  * 
   
 ## Download / 다운로드 방법
   * 주소를 깃허브 데스크탑에 붙여넣기 https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
   * 또는 프로젝트를 원하는 폴더에 직접 다운로드
 
 ## Function / 기능
-  * 사용자 등록
-  * 얼굴 탐지
-  * 얼굴 분류
-  * 잠금 해제 - 미구현
+  * 사용자 사진 촬영 및 등록
+  * 얼굴 인식을 이용한 잠금 해제
+  * 특정 사용자 삭제
+  * 모든 사용자 
 
 ## How to use / 사용 방법
   ## 1. 사용자 등록 with User_register.py and Train.py
