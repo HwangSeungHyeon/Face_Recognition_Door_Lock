@@ -51,7 +51,6 @@ https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습
   * 도어락 제어 방법: http://mibediy.blogspot.com/2016/02/4-iot-hw.html
   * 쉘 스크립트 작성법: https://ddangeun.tistory.com/113
   * picamera를 이용한 카메라 제어: https://neosarchizo.gitbooks.io/raspberrypiforsejonguniv/content/chapter4.html
-  * 
   
 ## 라즈베리 파이에 다운로드하는 방법
   1. 라즈베리 파이 상단 메뉴의 터미널 아이콘 클릭
