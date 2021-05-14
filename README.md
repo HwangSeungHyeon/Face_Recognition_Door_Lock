@@ -40,6 +40,7 @@ https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습
 
 ## 사전 준비
   * 라즈베리 파이 OS 설치: https://blog.naver.com/ljy9378/221430062420
+  * VNC 뷰어로 라즈베리 파이 제어: https://blog.naver.com/ljy9378/221430150057
   * 라즈베리 파이 기본 설정: https://blog.naver.com/ljy9378/221430169621
   * 가상환경 사용법: https://www.daleseo.com/python-venv/
   * opencv 설치 방법: https://webnautes.tistory.com/916
