@@ -1,5 +1,5 @@
 # Face_Recognition_Door_Lock
-딥러닝을 기반으로 한 라즈베리파이 얼굴 인식 도어락을 만드는 프로젝트입니다.
+라즈베리파이를 이용한 얼굴 인식 도어락을 만드는 프로젝트입니다.
 
 ## 주요기능
   * 사용자 사진 촬영 및 등록
@@ -11,7 +11,7 @@
   * 2020년 발발한 COVID-19 바이러스의 확산을 막기 위해 신체 접촉을 줄여야만 한다.
   * 그러나 기존 키패드 방식의 도어락의 경우 다른 사람과의 접촉이 빈번하게 발생한다.
   * 얼굴 인식 방식을 사용할 경우 신체 접촉을 최소한으로 줄일 수 있다.
-  * 라즈베리 파이에서 모든 작업을 처리하기 때문에 데스크탑이 필요없다.
+  * 라즈베리 파이에서 모든 작업을 처리하기 때문에 별도의 컴퓨터가 필요없다.
   * 소형의 라즈베리 파이를 이용하기 때문에 다양한 공간에서 사용할 수 있다.
 
 ## 개발 환경
@@ -40,7 +40,7 @@
 ## 사전 준비
   * 라즈베리 파이 OS 설치: https://blog.naver.com/ljy9378/221430062420
   * 라즈베리 파이 기본 설정: https://blog.naver.com/ljy9378/221430169621
-  * 가상환경 사용법: https://sites.google.com/site/raspberrypieducation/programmingtools/python/pyvenv
+  * 가상환경 사용법: https://www.daleseo.com/python-venv/
   * opencv 설치 방법: https://webnautes.tistory.com/916
   * Unknown Face 이미지 출처: https://github.com/JingchunCheng/All-Age-Faces-Dataset/blob/master/README.md
   * GPIO 설치 방법: https://hoho325.tistory.com/212
@@ -61,9 +61,9 @@
       0-3 코드를 실행하면 Unknown_Face.pkl 파일이 encoding 폴더에 생성된다.
        
   ## 1. 쉘 스크립트 작동
-      1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경 실행
+      1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경을 실행한다.
       2. cd Face_Recognition_Door_Lock
-      3. sh run_script.sh으로 파이썬 코드 실행
+      3. sh run_script.sh으로 파이썬 코드를 실행한다.
        
   ## 2. 사용자 등록 https://youtu.be/Ubvjq_VEEco
       2-1. Function.py 실행 후 a를 입력한다.
@@ -101,13 +101,13 @@
       5-3. Unknown_Face.pkl을 제외한 모든 사람의 데이터가 삭제된다.
 
 ## 원하는 위치에 쉘 스크립트를 작성하는 법
-     1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경 실행
-     2. nano run_script.sh을 입력해서 원하는 곳에 nano 편집기를 열어 run_script.sh라는 이름의 파일을 생성
+     1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경을 실행한다.
+     2. nano run_script.sh을 입력해서 원하는 곳에 nano 편집기를 열어 run_script.sh라는 이름의 파일을 생성한다.
      3. #!/bin/bash 입력
      4. echo "run script" 입력
      5. python3 /home/pi/Face_Recognition_Door_Lock/Function.py 입력
-     6. read reply 입력 후 저장
-     7. sh run_script.sh으로 파이썬 코드 실행
+     6. read reply 입력 후 저장한다.
+     7. sh run_script.sh으로 파이썬 코드를 실행한다.
 
 ## Built With / 개발에 참여한 사람
  * 황승현: 사용자 등록, 도어락 제어, 사용자 삭제
