@@ -55,7 +55,7 @@
   3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
 
 ## 사용 방법
-  ## 0. Unknown Face 등록
+  ## 0. Unknown Face 등록 - 테스트 용도로만 사용하는 코드
       0-1 이 단계는 굳이 하지 않아도 되며, encoding 폴더에 이미 pkl 파일이 들어있다.
       0-2 테스트를 해보고 싶다면 source 폴더에 있는 00_Encode_Unknown_Face.py를 Face_Recognition_Door_Lock 폴더로 옮긴다.
       0-3 코드를 실행하면 Unknown_Face.pkl 파일이 encoding 폴더에 생성된다.
