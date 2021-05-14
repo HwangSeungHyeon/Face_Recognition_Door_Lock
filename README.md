@@ -1,5 +1,6 @@
 # Face_Recognition_Door_Lock
 라즈베리파이를 이용한 얼굴 인식 도어락을 만드는 프로젝트입니다.
+https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습니다.
 
 ## 주요기능
   * 사용자 사진 촬영 및 등록
