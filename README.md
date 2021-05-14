@@ -51,8 +51,9 @@ https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습
   * 도어락 제어 방법: http://mibediy.blogspot.com/2016/02/4-iot-hw.html
   * 쉘 스크립트 작성법: https://ddangeun.tistory.com/113
   * picamera를 이용한 카메라 제어: https://neosarchizo.gitbooks.io/raspberrypiforsejonguniv/content/chapter4.html
+  * 라즈베리 파이 스크린 세이버 끄는 법: https://geeksvoyage.com/raspberry%20pi4/turn-off-screen-blanking-for-pi4/
 
-## 라즈베리파이 터치 스크린 터치 기능 끄는 법
+## 라즈베리 파이 터치 스크린 터치 기능 끄는 법
   * 라즈베리 파이 상단 메뉴의 터미널 아이콘 클릭
   * sudo nano /boot/config.txt
   * disable_touchscreen=1을 입력한 후 저장
