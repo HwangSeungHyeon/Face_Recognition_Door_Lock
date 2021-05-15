@@ -65,6 +65,11 @@ def register():
         print("[Info] return the menu")
         pass
     
+    elif people_name == "" or people_name.find(' ') > -1:
+        print("[Info]: The name can't contain 'blank'")
+        print("[Info]: return the menu")
+        pass
+    
     else:
         save_path = folder_dir + people_name +"/"
         print("저장할 폴더의 경로는 " + save_path + " 입니다.")
@@ -132,6 +137,8 @@ def register():
                 
             if not knownEncodings:
                 print("[Error] Can't detect faces in all images")
+                print("[Info] Delete images used for encoding")
+                rmtree(save_path)
             
             else:
                 # 얼굴 임베딩 데이터와 이름을 pickle 파일로 저장
