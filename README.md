@@ -112,11 +112,13 @@ https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습
 ## 원하는 위치에 쉘 스크립트를 작성하는 법
      1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경을 실행한다.
      2. nano run_script.sh을 입력해서 원하는 곳에 nano 편집기를 열어 run_script.sh라는 이름의 파일을 생성한다.
-     3. #!/bin/bash 입력
-     4. echo "run script" 입력
-     5. python3 /home/pi/Face_Recognition_Door_Lock/Function.py 입력
-     6. read reply 입력 후 저장한다.
-     7. bash run_script.sh으로 파이썬 코드를 실행한다.
+     4. #!/bin/bash 입력
+     5. echo "run venv" 입력
+     6. source /home/pi/가상환경 이름/bin/activate 입력
+     7. echo "run script" 입력
+     8. python3 /home/pi/Face_Recognition_Door_Lock/Function.py 입력
+     9. read reply 입력 후 저장한다.
+     10. bash run_script.sh으로 파이썬 코드를 실행한다.
 
 ## Built With / 개발에 참여한 사람
  * 황승현: 사용자 등록, 도어락 제어, 사용자 삭제
