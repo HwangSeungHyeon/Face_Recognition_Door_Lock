@@ -97,6 +97,8 @@ def register():
             camera.stop_preview()
 
             encodings_path = "/home/pi/Face_Recognition_Door_Lock/encoding/"
+            if os.path.isdir(encodings_path)==False:
+                os.mkdir(encodings_path)
         
             #datasets에 들어있는 이미지 list
             imagePaths = list(paths.list_images(save_path))
@@ -147,6 +149,9 @@ def register():
 def recognition():
     # pkl 데이터들을 합치는 부분
     base_dir = '/home/pi/Face_Recognition_Door_Lock/encoding/'
+    if os.path.isdir(base_dir)==False:
+        os.mkdir(base_dir)
+        
     temp_encode = []
     temp_name = []
     
