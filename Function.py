@@ -60,8 +60,8 @@ def register():
         os.mkdir(folder_dir)
         
     people_name = input("유저 이름: ")
-    if people_name == "Unknown":
-        print("[Info]: can not using this name")
+    if people_name.find('Unknown') > -1 or people_name.find('unknown') > -1:
+        print("[Info]: Can not using name 'unknown'")
         print("[Info] return the menu")
         pass
     
