@@ -193,7 +193,7 @@ def recognition():
 
         # 카메라로 촬영중인 사람의 얼굴과 pickle 파일에 저장된 embedding vector를 비교
         for encoding in encodings:
-            matches = face_recognition.compare_faces(data["encodings"], encoding, tolerance = 0.6)
+            matches = face_recognition.compare_faces(data["encodings"], encoding, tolerance = 0.35)
             name = "Unknown"
 
             # 두 얼굴 사이의 거리를 비교
