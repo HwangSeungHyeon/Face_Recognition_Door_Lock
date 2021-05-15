@@ -155,7 +155,8 @@ def recognition():
     # pkl 데이터들을 합치는 부분
     base_dir = '/home/pi/Face_Recognition_Door_Lock/encoding/'
     if os.path.isdir(base_dir)==False:
-        os.mkdir(base_dir)
+        print("[Error] encoding folder is not exist")
+        exit()
         
     temp_encode = []
     temp_name = []
