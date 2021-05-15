@@ -61,8 +61,7 @@ https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습
   
 ## 라즈베리 파이에  다운로드하는 방법
   1. 라즈베리 파이 상단 메뉴의 터미널 아이콘 클릭
-  2. cd ~/원하는 위치
-  3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
+  2. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
 
 ## 사용 방법
   ## 0. Unknown Face 등록 - 테스트 용도로만 사용하는 코드
