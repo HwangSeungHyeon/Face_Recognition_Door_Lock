@@ -137,8 +137,6 @@ def register():
                 
             if not knownEncodings:
                 print("[Error] Can't detect faces in all images")
-                print("[Info] Delete images used for encoding")
-                rmtree(save_path)
             
             else:
                 # 얼굴 임베딩 데이터와 이름을 pickle 파일로 저장
@@ -149,8 +147,8 @@ def register():
                     f.write(pickle.dumps(data))
                 f.close()
             
-                print("[Info] Delete images used for encoding")
-                rmtree(save_path)
+            print("[Info] Delete images used for encoding")
+            rmtree(save_path)
 
 # 얼굴을 인식하는 메소드
 def recognition():
@@ -195,7 +193,7 @@ def recognition():
 
         # 카메라로 촬영중인 사람의 얼굴과 pickle 파일에 저장된 embedding vector를 비교
         for encoding in encodings:
-            matches = face_recognition.compare_faces(data["encodings"], encoding, tolerance = 0.45)
+            matches = face_recognition.compare_faces(data["encodings"], encoding, tolerance = 0.6)
             name = "Unknown"
 
             # 두 얼굴 사이의 거리를 비교
