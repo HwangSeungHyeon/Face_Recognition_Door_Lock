@@ -1,5 +1,6 @@
 # Face_Recognition_Door_Lock
 라즈베리파이를 이용한 얼굴 인식 도어락을 만드는 프로젝트입니다.
+https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습니다.
 
 ## 주요기능
   * 사용자 사진 촬영 및 등록
@@ -39,6 +40,7 @@
 
 ## 사전 준비
   * 라즈베리 파이 OS 설치: https://blog.naver.com/ljy9378/221430062420
+  * VNC 뷰어로 라즈베리 파이 제어: https://blog.naver.com/ljy9378/221430150057
   * 라즈베리 파이 기본 설정: https://blog.naver.com/ljy9378/221430169621
   * 가상환경 사용법: https://www.daleseo.com/python-venv/
   * opencv 설치 방법: https://webnautes.tistory.com/916
@@ -48,14 +50,22 @@
   * Face recognition 설치 방법: 콘솔창에 pip3 install face_recognition 입력
   * 도어락 제어 방법: http://mibediy.blogspot.com/2016/02/4-iot-hw.html
   * 쉘 스크립트 작성법: https://ddangeun.tistory.com/113
+  * picamera를 이용한 카메라 제어: https://neosarchizo.gitbooks.io/raspberrypiforsejonguniv/content/chapter4.html
+  * 라즈베리 파이 스크린 세이버 끄기: https://geeksvoyage.com/raspberry%20pi4/turn-off-screen-blanking-for-pi4/
+
+## 라즈베리 파이 터치 스크린 터치 기능 끄는 법
+  * 라즈베리 파이 상단 메뉴의 터미널 아이콘 클릭
+  * sudo nano /boot/config.txt
+  * disable_touchscreen=1을 입력한 후 저장
+  * 재부팅을 하면 터치 기능이 꺼진다.
   
-## 라즈베리 파이에 다운로드하는 방법
+## 라즈베리 파이에  다운로드하는 방법
   1. 라즈베리 파이 상단 메뉴의 터미널 아이콘 클릭
   2. cd ~/원하는 위치
   3. git clone https://github.com/HwangSeungHyeon/Face_Recognition_Door_Lock.git
 
 ## 사용 방법
-  ## 0. Unknown Face 등록
+  ## 0. Unknown Face 등록 - 테스트 용도로만 사용하는 코드
       0-1 이 단계는 굳이 하지 않아도 되며, encoding 폴더에 이미 pkl 파일이 들어있다.
       0-2 테스트를 해보고 싶다면 source 폴더에 있는 00_Encode_Unknown_Face.py를 Face_Recognition_Door_Lock 폴더로 옮긴다.
       0-3 코드를 실행하면 Unknown_Face.pkl 파일이 encoding 폴더에 생성된다.
