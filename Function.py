@@ -14,7 +14,6 @@ import face_recognition
 import RPi.GPIO as GPIO
 from shutil import rmtree
 
-# unlock과 lock을 테스트할 때 사용하는 메소드
 def test():
     unlock()
     lock()
@@ -61,84 +60,88 @@ def register():
         os.mkdir(folder_dir)
         
     people_name = input("유저 이름: ")
+    if people_name == "Unknown":
+        print("[Info]: can not using this name")
+        print("[Info] return the menu")
+        pass
     
-    save_path = folder_dir + people_name +"/"
-    print("저장할 폴더의 경로는 " + save_path + " 입니다.")
+    else:
+        save_path = folder_dir + people_name +"/"
+        print("저장할 폴더의 경로는 " + save_path + " 입니다.")
     
-    # 해당하는 폴더가 없을 경우 생성해줌
-    if os.path.isdir(save_path)==False:
-        os.mkdir(save_path)
+        # 해당하는 폴더가 없을 경우 생성해줌
+        if os.path.isdir(save_path)==False:
+            os.mkdir(save_path)
         
-    with PiCamera() as camera:
-        camera.rotation = 90
-        camera.annotate_text_size = 100
-        camera.annotate_background = Color('red')
-        camera.annotate_foreground = Color('yellow')
+        with PiCamera() as camera:
+            camera.rotation = 90
+            camera.annotate_text_size = 100
+            camera.annotate_background = Color('red')
+            camera.annotate_foreground = Color('yellow')
     
-        camera.start_preview()
-        camera.brightness = 50
-        camera.exposure_mode = 'auto'
+            camera.start_preview()
+            camera.brightness = 50
+            camera.exposure_mode = 'auto'
     
-        for i in range(5, 0, -1):
-            camera.annotate_text = str(i)
-            time.sleep(1)
-        camera.annotate_text = ""
+            for i in range(5, 0, -1):
+                camera.annotate_text = str(i)
+                time.sleep(1)
+            camera.annotate_text = ""
         
-        for i in range(10):
-            time.sleep(0.5)
-            camera.capture(save_path + people_name + '%s.jpg' %i)
+            for i in range(10):
+                time.sleep(0.5)
+                camera.capture(save_path + people_name + '%s.jpg' %i)
             
-        camera.annotate_text = "Finish!"
-        time.sleep(2)
-        camera.stop_preview()
+            camera.annotate_text = "Finish!"
+            time.sleep(2)
+            camera.stop_preview()
 
-        encodings_path = "/home/pi/Face_Recognition_Door_Lock/encoding/"
+            encodings_path = "/home/pi/Face_Recognition_Door_Lock/encoding/"
         
-        #datasets에 들어있는 이미지 list
-        imagePaths = list(paths.list_images(save_path))
+            #datasets에 들어있는 이미지 list
+            imagePaths = list(paths.list_images(save_path))
         
-        #얼굴 embedding vector 데이터를 저장할 knownEncodings 리스트와, 학습한 얼굴 이름을 저장할 knownNames 리스트
-        knownEncodings = []
-        knownNames = []
+            #얼굴 embedding vector 데이터를 저장할 knownEncodings 리스트와, 학습한 얼굴 이름을 저장할 knownNames 리스트
+            knownEncodings = []
+            knownNames = []
         
-        # dataset의 경로 상에 있는 이미지를 모두 가져옴
-        for (i, imagePath) in enumerate(imagePaths):
-            print("[INFO] processing image {}/{}".format(i + 1, len(imagePaths)))
-            name = imagePath.split(os.path.sep)[-2]
+            # dataset의 경로 상에 있는 이미지를 모두 가져옴
+            for (i, imagePath) in enumerate(imagePaths):
+                print("[INFO] processing image {}/{}".format(i + 1, len(imagePaths)))
+                name = imagePath.split(os.path.sep)[-2]
 
-            image = cv2.imread(imagePath)
-            rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                image = cv2.imread(imagePath)
+                rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     
-            # 얼굴의 박스 영역을 찾아줌
-            boxes = face_recognition.face_locations(rgb, model = "hog")
+                # 얼굴의 박스 영역을 찾아줌
+                boxes = face_recognition.face_locations(rgb, model = "hog")
             
-            if not boxes:
-                print("[ERROR] Face does not detected")
-                pass
+                if not boxes:
+                    print("[ERROR] Face does not detected")
+                    pass
     
-            # 박스 영역의 얼굴 임베딩 데이터를 추출
-            encodings = face_recognition.face_encodings(rgb, boxes)
+                # 박스 영역의 얼굴 임베딩 데이터를 추출
+                encodings = face_recognition.face_encodings(rgb, boxes)
     
-            # loop over the encodings
-            for encoding in encodings:
-                knownEncodings.append(encoding)
-                knownNames.append(name)
-        
-        # 모든 사진에 얼굴이 없다면
-        if not knownEncodings:
-            print("[Error] Can't detect faces in all images")
+                # loop over the encodings
+                for encoding in encodings:
+                    knownEncodings.append(encoding)
+                    knownNames.append(name)
+                
+            if not knownEncodings:
+                print("[Error] Can't detect faces in all images")
             
-        else:
-            # 얼굴 임베딩 데이터와 이름을 pickle 파일로 저장
-            print("[INFO] serializing encodings...")
-            data = {"encodings": knownEncodings, "names": knownNames}
+            else:
+                # 얼굴 임베딩 데이터와 이름을 pickle 파일로 저장
+                print("[INFO] serializing encodings...")
+                data = {"encodings": knownEncodings, "names": knownNames}
 
-            with open(encodings_path + people_name + ".pkl", "wb") as f:
-                f.write(pickle.dumps(data))
-            f.close()
+                with open(encodings_path + people_name + ".pkl", "wb") as f:
+                    f.write(pickle.dumps(data))
+                f.close()
             
-            print("[Info] Delete images used for encoding")
-            rmtree(save_path)
+                print("[Info] Delete images used for encoding")
+                rmtree(save_path)
 
 # 얼굴을 인식하는 메소드
 def recognition():
