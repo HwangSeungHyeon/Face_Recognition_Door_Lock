@@ -70,9 +70,8 @@ https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습
       0-3 코드를 실행하면 Unknown_Face.pkl 파일이 encoding 폴더에 생성된다.
        
   ## 1. 쉘 스크립트 작동
-      1. 가상환경을 사용할 경우 source 가상환경폴더명/bin/activate을 터미널에 입력하여 가상환경을 실행한다.
-      2. cd Face_Recognition_Door_Lock
-      3. bash run_script.sh으로 파이썬 코드를 실행한다.
+      1. cd Face_Recognition_Door_Lock
+      2. bash run_script.sh으로 파이썬 코드를 실행한다.
        
   ## 2. 사용자 등록 https://youtu.be/Ubvjq_VEEco
       2-1. Function.py 실행 후 a를 입력한다.
