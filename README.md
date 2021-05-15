@@ -73,6 +73,7 @@ https://youtu.be/RLJtwxJUt0o 에서 전체 구동 영상을 확인할 수 있습
       1. 라즈베리 파이 상단 메뉴의 터미널 아이콘 클릭
       2. cd Face_Recognition_Door_Lock
       3. bash run_script.sh으로 파이썬 코드를 실행한다.
+      4. 스크립트 오류가 난다면 해당 파일을 열어 자신의 가상환경 이름 변경한다.
        
   ## 2. 사용자 등록 https://youtu.be/Ubvjq_VEEco
       2-1. Function.py 실행 후 a를 입력한다.
