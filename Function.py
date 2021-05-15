@@ -137,8 +137,6 @@ def register():
                 
             if not knownEncodings:
                 print("[Error] Can't detect faces in all images")
-                print("[Info] Delete images used for encoding")
-                rmtree(save_path)
             
             else:
                 # 얼굴 임베딩 데이터와 이름을 pickle 파일로 저장
@@ -149,8 +147,8 @@ def register():
                     f.write(pickle.dumps(data))
                 f.close()
             
-                print("[Info] Delete images used for encoding")
-                rmtree(save_path)
+            print("[Info] Delete images used for encoding")
+            rmtree(save_path)
 
 # 얼굴을 인식하는 메소드
 def recognition():
